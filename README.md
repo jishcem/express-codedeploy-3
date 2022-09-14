@@ -1,3 +1,5 @@
+[My LinkedIn Profile](https://www.linkedin.com/in/ajeesh-j-1170041b/)
+
 # NodeJs TypeScript Express App Deploy to EC2 using AWS S3 Artifact from AWS Codedeploy from Command line and from Github Actions. 
 
 # In the project terminal to upload the project zip to aws s3.
