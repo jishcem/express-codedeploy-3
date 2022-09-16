@@ -5,7 +5,7 @@
 [Previous Video on How AWS CodeDeploy Works - Upload Artifacts to AWS S3](https://www.youtube.com/watch?v=wc3NY5QL4IY)
 
 
-# NodeJs TypeScript Express App Deploy to EC2 using AWS S3 Artifact from AWS Codedeploy from Command line and from Github Actions. 
+# NodeJs TypeScript Express App Deploy to EC2 using AWS S3 Artifact from AWS Codedeploy from Github Actions CI & CD pipeline 
 
 # In the project terminal to upload the project zip to aws s3.
 zip -r project.zip . -x node_modules\* dist\* .git\* && aws s3 cp project.zip s3://typescript-express-artifact-2/code-deploy-3/project.zip
