@@ -7,6 +7,10 @@ app.get('/', (req: Request, res: Response) => {
     res.send("Hello World, I want to be a good devops guy")
 })
 
+app.get('/health', (req: Request, res: Response) => {
+    res.send("health is good")
+})
+
 app.listen(port, () => {
     console.log(`App listening on the port ${port}`)    
 })
