@@ -4,7 +4,7 @@ on:
   workflow_dispatch: {}
 
 env:
-  BUCKET_NAME : "typescript-express-artifact-2"
+  BUCKET_NAME : "codedeploy-mc"
   AWS_REGION : "ap-south-1"
   GITHUB_REF: "main"
 
@@ -46,7 +46,7 @@ jobs:
       - name:  Copy build to S3
         run: |
           zip -r project.zip . -x node_modules\* dist\* .git\*
-          aws s3 cp project.zip s3://typescript-express-artifact-2/code-deploy-3/project.zip
+          aws s3 cp project.zip s3://codedeploy-mc/code-deploy-3/project.zip
         
   deploy:
     name: Deploy to EC2
@@ -67,4 +67,4 @@ jobs:
         role-to-assume: ${{ secrets.IAMROLE_GITHUB }}
         aws-region: ${{ env.AWS_REGION }}
     - run: |
-        aws deploy create-deployment --application-name node-app --deployment-group-name ec2-app --s3-location bucket=typescript-express-artifact-2,key=code-deploy-3/project.zip,bundleType=zip
+        aws deploy create-deployment --application-name node-app --deployment-group-name ec2-app --s3-location bucket=codedeploy-mc,key=code-deploy-3/project.zip,bundleType=zip
